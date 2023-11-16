@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :recipes
   resources :public_recipes, only: [:index]
   resources :general_shopping_list, only: [:index]
+  
+  root 'foods#index'
 end
