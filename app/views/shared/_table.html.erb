@@ -13,8 +13,8 @@
     <td class=""> <%= item.quantity%><%= item.food.measurement_unit%> </td>
     <td class=""> $<%= item.calculate_value_by_quantity %> </td>
     <td>
-        <%= button_to "Modify", "modify_path" %> |
-        <%= button_to "Remove", recipe_recipe_food_path(@recipe, item) , method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe, item)  %> |
+        <%= button_to "Remove", recipe_recipe_food_path(@recipe, item), method: :delete, data: { confirm: 'Are you sure?' } %>
     </td>
 <% end %>
 </tr>
