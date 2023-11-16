@@ -1,5 +1,5 @@
 module GeneralShoppingListHelper
-      def generate_missing_foods(user_foods, recipe_foods)
+  def generate_missing_foods(user_foods, recipe_foods)
     user_recipe_foods = recipe_foods.group_by(&:food_id).transform_values { |foods| foods.sum(&:quantity) }
 
     missing_foods = []
