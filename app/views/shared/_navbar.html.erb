@@ -1,6 +1,6 @@
 <nav class="border-b">
   <div class="flex justify-between mx-9 mt-7 pb-6">
-    <span><%= link_to 'Home', root_path %></span>
+    <span><%= link_to 'Logout', destroy_user_session_path, 'data-turbo-method': :delete %></span>
     <ul class="flex gap-4">
       <li><%= link_to 'My Recipes', recipes_path %></li>
       <li><%= link_to 'My Foods', foods_path %></li>
