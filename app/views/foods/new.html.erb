@@ -1,4 +1,32 @@
+<h1>New food</h1>
+
+<%= form_with model: @food, url: foods_path, method: :post do |form| %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :measurement_unit %>
+    <%= form.select :measurement_unit, ['Units', 'Liters', 'Kilograms', 'Grams'] %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
 <div>
-  <h1 class="font-bold text-4xl">Foods#new</h1>
-  <p>Find me in app/views/foods/new.html.erb</p>
+  <%= link_to "Back to foods", foods_path %>
 </div>
