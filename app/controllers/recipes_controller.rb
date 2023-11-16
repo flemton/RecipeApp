@@ -3,7 +3,20 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
-  def show; end
+  def show
+    @recipe = Recipe.includes(:recipe_foods).find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update(update_public_recipe_params)
+      flash[:notice] = 'This recipe public state has been updated'
+    else
+      flash[:alert] = 'Failed to update the public state of this recipe'
+    end
+    redirect_to @recipe
+  end
 
   def new
     @recipe = Recipe.new
@@ -32,6 +45,10 @@ class RecipesController < ApplicationController
   end
 
   private
+
+  def update_public_recipe_params
+    params.require(:recipe).permit(:public) # Asegúrate de incluir otros atributos si es necesario
+  end
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
