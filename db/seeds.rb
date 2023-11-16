@@ -8,5 +8,5 @@
 
 # user = User.create(name: 'JD')
 # food = Food.create(user: user, name: 'banana', measurement_unit: 'kilos', price: 100, quantity: 45)
-# recipe = Recipe.create(name: 'cafe', preparation_time: 1.5, cooking_time: 1, description: 'coffee', public: 1)
+# recipe = Recipe.create(user: user, name: 'cafe', preparation_time: 1.5, cooking_time: 1, description: 'coffee', public: 1)
 # recipefood = RecipeFood.create(food: food, recipe: recipe, quantity: 100)
