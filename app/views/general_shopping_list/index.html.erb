@@ -1,4 +1,28 @@
-<div>
-  <h1 class="font-bold text-4xl">GeneralShoppingList#index</h1>
-  <p>Find me in app/views/general_shopping_list/index.html.erb</p>
+<div class="w-full">
+  <h1 class="font-bold text-4xl text-center mb-8">General Shopping List</h1>
+  <div class="text-center flex justify-around">
+    <% missing_foods = generate_missing_foods(@user_foods, @recipes_foods) %>
+    <p>Amount of food items to buy: <%= missing_foods.size %></p>
+    <p>Total value of food needed: <%= total_price_remaining(missing_foods) %>$</p>
+  </div>
+  <section class="flex justify-center mt-4">
+    <table>
+      <thead>
+          <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% missing_foods.each do |missing_food| %>
+          <tr>
+            <td><%= missing_food[:food].name %></td>
+            <td class=""><%= missing_food[:quantity_remaining] %></td>
+            <td class=""> <%= missing_food[:price_remaining] %>$</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
 </div>

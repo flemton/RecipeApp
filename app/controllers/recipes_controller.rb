@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def show
@@ -35,6 +35,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def public_recipes
+    # @recipes = Recipe.where(public: true) # Filter for public recipes
+    @public_recipes = Recipe.includes(:recipe_foods, recipe_foods: :food).where(public: true)
+  end
+
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
@@ -47,7 +52,7 @@ class RecipesController < ApplicationController
   private
 
   def update_public_recipe_params
-    params.require(:recipe).permit(:public) # Asegúrate de incluir otros atributos si es necesario
+    params.require(:recipe).permit(:public)
   end
 
   def recipe_params
