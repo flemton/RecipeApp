@@ -1,0 +1,20 @@
+<tr>
+<% if controller_name == 'foods' %>
+    <td><%= item.name %></td>
+    <td class=""> <%=item.measurement_unit%> </td>
+    <td class=""> $<%=item.price%> </td>
+    <td class=""> <%=item.quantity%> </td>
+    <td>
+        <%= button_to "Remove", food_path(item) , method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+<% else %>
+    <td><%= item.food.name %></td>
+    <td class=""> <%=item.food.measurement_unit %> </td>
+    <td class=""> <%= item.quantity%><%= item.food.measurement_unit%> </td>
+    <td class=""> $<%= item.calculate_value_by_quantity %> </td>
+    <td>
+        <%= button_to "Modify", "modify_path" %> |
+        <%= button_to "Remove", recipe_recipe_food_path(@recipe, item) , method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+<% end %>
+</tr>

@@ -1,0 +1,9 @@
+<section>
+  <h2><%= food.name %></h2>
+  <p><%= food.quantity %></p>
+  <p><%= food.measurement_unit %></p>
+  <p>$<%= food.price %></p>
+  <div>
+  <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</section>

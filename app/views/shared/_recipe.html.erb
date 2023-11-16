@@ -1,0 +1,13 @@
+<li>
+  <h2><%= recipe.name %></h2>
+
+  <div>
+    <h3>Description:</h3>
+    <%= recipe.description %>
+  </div>
+
+  <div>
+    <%= link_to "Show this recipe", recipe %>
+  </div>
+  <%= button_to "Remove the recipe", recipe, method: :delete %>
+</li>
