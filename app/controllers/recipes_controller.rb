@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
+
   def index
     @recipes = current_user.recipes
   end
@@ -36,8 +39,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    # @recipes = Recipe.where(public: true) # Filter for public recipes
-    @public_recipes = Recipe.includes(:recipe_foods, recipe_foods: :food).where(public: true)
+    @public_recipes = Recipe.includes(:recipe_foods, recipe_foods: :food).where(public: true).order(created_at: :asc)
   end
 
   def destroy
