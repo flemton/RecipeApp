@@ -1,0 +1,15 @@
+<div class="flex justify-center w-full">
+    <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, method: :post, class: "flex flex-col" do |f| %>
+        <h1 class="text-center text-lg mb-4"> Add Ingredient</h1>
+        <div class="w-full mb-6 self-center">
+            <%= f.select :food_id, options_for_select(@foods.map { |food| [food.name, food.id] }), class: "px-2 border-solid border-black border-2" %>
+        </div>
+        <div class="text-center">
+            <%= f.label :quantity %>
+            <%= f.number_field :quantity, placeholder: 'Quantity', class: "w-full p-2 border-solid border-black border-2 mt-1", min: 0 %>
+        </div>
+        <div>
+            <%= f.submit 'Add ingredient', class:"p-2 border-solid border-black border-2 w-full mt-5 cursor-pointer" %>
+        </div>
+    <% end %>
+</div>
