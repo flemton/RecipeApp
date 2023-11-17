@@ -1,22 +1,23 @@
 <tr>
 <% if controller_name == 'foods' %>
-    <td><%= item.name %></td>
-    <td class=""> <%=item.measurement_unit%> </td>
-    <td class=""> $<%=item.price%> </td>
-    <td class=""> <%=item.quantity%> </td>
-    <td>
-        <%= button_to "Remove", food_path(item) , method: :delete, data: { confirm: 'Are you sure?' } %>
+    <td class="border-b-2 border-green-900"><%= item.name %></td>
+    <td class="border-2 border-green-900"> <%=item.measurement_unit%> </td>
+    <td class="border-b-2 border-green-900"> $<%=item.price%> </td>
+    <td class="border-2 border-green-900"> <%=item.quantity%> </td>
+    <td class="border-b-2 border-green-900">
+        <%= button_to "Remove", food_path(item) , method: :delete, data: { confirm: 'Are you sure?' }, class:"text-red-600 underline" %>
     </td>
 <% else %>
-    <td><%= item.food.name %></td>
-    <td class=""> <%=item.food.measurement_unit %> </td>
-    <td class=""> <%= item.quantity%><%= item.food.measurement_unit%> </td>
-    <td class=""> $<%= item.calculate_value_by_quantity %> </td>
+    <td class="border-b-2 border-green-900"><%= item.food.name %></td>
+    <td class="border-2 border-green-900"> <%=item.food.measurement_unit %> </td>
+    <td class="border-b-2 border-green-900"> <%= item.quantity%> <%= item.food.measurement_unit%> </td>
+    <td class="border-2 border-green-900"> $<%= item.calculate_value_by_quantity %> </td>
     <% if can? :manage, @recipe %>
-        <td>
-        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe, item)  %> |
-        <%= button_to "Remove", recipe_recipe_food_path(@recipe, item), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+      <td class="border-b-2 border-green-900">
+        <div class="flex justify-around">
+          <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe, item), class:"text-blue-500 underline"  %> |
+          <%= button_to "Remove", recipe_recipe_food_path(@recipe, item), method: :delete, data: { confirm: 'Are you sure?' }, class:"text-red-600 underline" %>
+        </div>
+      </td>
     <% end %>
 <% end %>
-</tr>

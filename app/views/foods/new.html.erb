@@ -1,32 +1,31 @@
-<h1>New food</h1>
+<div class="flex flex-col justify-center items-center w-full">
+  <h1 class="text-center text-xl">New food</h1>
 
-<%= form_with model: @food, url: foods_path, method: :post do |form| %>
+  <%= form_with model: @food, url: foods_path, method: :post, class: "flex flex-col gap-3 my-3 items-center" do |form| %>
+
+    <div>
+      <%= form.text_field :name, placeholder: "Name", class: "w-full p-2 border-solid border-black border-2 mt-1" %>
+    </div>
+
+    <div>
+      <%= form.label :measurement_unit %>
+      <%= form.select :measurement_unit, ['Units', 'Liters', 'Kilograms', 'Grams'] %>
+    </div>
+
+    <div>
+      <%= form.text_field :price, placeholder: "Price", class: "w-full p-2 border-solid border-black border-2 mt-1" %>
+    </div>
+
+    <div>
+      <%= form.text_field :quantity, placeholder: "Quantity", class: "w-full p-2 border-solid border-black border-2 mt-1" %>
+    </div>
+
+    <div>
+      <%= form.submit 'Create Food', class:"p-2 border-solid border-black border-2 w-full mt-5 cursor-pointer" %>
+    </div>
+  <% end %>
 
   <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= link_to "Back to foods", foods_path, class: "underline" %>
   </div>
-
-  <div>
-    <%= form.label :measurement_unit %>
-    <%= form.select :measurement_unit, ['Units', 'Liters', 'Kilograms', 'Grams'] %>
-  </div>
-
-  <div>
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<div>
-  <%= link_to "Back to foods", foods_path %>
 </div>

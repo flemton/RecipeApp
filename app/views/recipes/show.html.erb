@@ -1,50 +1,39 @@
-<div class="w-full ml-7 mr-20">
+<div class="w-full mr-20 mt-7">
   <h1 class="font-bold text-4xl text-center"><%= @recipe.name %></h1>
-  <div class="flex flex-col gap-8 py-4">
+  <section class="flex flex-col gap-8 py-4">
     <div class="flex flex-row-reverse justify-between mt-6">
       <div class="flex items-center gap-3">
         <% if can? :manage, @recipe %>
-          <span class="ml-3 text-lg">Public</span>
-          <%= form_with model: @recipe, url: recipe_path(@recipe), method: :patch do |f| %>
-            <label class="relative inline-flex items-center cursor-pointer">
-              <%= f.check_box :public, class: "sr-only peer", onchange: "this.form.submit();", checked: @recipe.public %>
-              <div class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-            </label>
-          <% end %>
-        <% end %>
-      </div>
-      <p class="text-xl">Preparation time: <%= @recipe.preparation_time %> hours</p>
-          </div>
+	@@ -17,32 +17,32 @@
+    </div>
     <p class="text-xl">Cooking time: <%= @recipe.cooking_time %> hours</p>
     <p class="text-xl"><%= @recipe.description %></p>
-  </div>
+  </section>
   <div class="flex justify-between my-4 mx-6 border-b-2 pb-7">
     <% if can? :manage, @recipe %>
       <a href="<%= url_for(action: 'index', controller: 'general_shopping_list') %>">
-        <button class="text-center py-1 px-2 border-solid border-black border-2">Generate Shopping List</button>
+        <button class="text-green-800 shadow-lg p-2 border-solid border-green-600 bg-green-400 border-2 rounded">Generate Shopping List</button>
       </a>
       <a href="<%= new_recipe_recipe_food_path(@recipe) %>">
-        <button class="text-center py-1 px-2 border-solid border-black border-2">Add Ingredient</button>
+        <button class="text-green-800 shadow-lg p-2 border-solid border-green-600 bg-green-400 border-2 rounded">Add Ingredient</button>
       </a>
     <% end %>
   </div>
 
   <section>
-    <table>
-      <thead>
-          <tr>
+    <table class="w-full border-2 border-green-900 text-center shadow-xl">
+      <thead class="border-2 border-green-900">
+          <tr class="bg-indigo-300">
             <th>Food</th>
-            <th>Measurement Unit</th>
+            <th class="border-2 border-green-900">Measurement Unit</th>
             <th>Quantity</th>
-            <th>Value</th>
+            <th class="border-2 border-green-900">Value</th>
             <% if can? :manage, @recipe %>
-              <th>Actions</th>
+              <th class="">Actions</th>
             <% end %>
           </tr>
       </thead>
-      <tbody>
+      <tbody class="bg-slate-100">
         <%= render partial: 'shared/table', collection: @recipe.recipe_foods, as: :item %>
       </tbody>
     </table>
-  </section>
-</div>

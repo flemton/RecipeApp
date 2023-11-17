@@ -1,10 +1,10 @@
-<nav class="border-b">
-  <div class="flex justify-between mx-9 mt-7 pb-6">
-    <span><%= link_to 'Logout', destroy_user_session_path, 'data-turbo-method': :delete %></span>
+<nav class="border-b bg-cyan-600">
+  <div class="flex justify-between mx-9 pt-7 pb-6">
+    <span><%= link_to 'Log Out', destroy_user_session_path, 'data-turbo-method': :delete, class: "text-sky-100" %></span>
     <ul class="flex gap-4">
-      <li><%= link_to 'My Recipes', recipes_path %></li>
-      <li><%= link_to 'My Foods', foods_path %></li>
-      <li><%= link_to 'Public Recipes', public_recipes_path %></li>
+      <li class="text-sky-100"><%= link_to 'My Recipes', recipes_path %></li>
+      <li class="text-sky-100"><%= link_to 'My Foods', foods_path %></li>
+      <li class="text-sky-100"><%= link_to 'Public Recipes', public_recipes_path %></li>
     </ul>
   </div>
 </nav>
