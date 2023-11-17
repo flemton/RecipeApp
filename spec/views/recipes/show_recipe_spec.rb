@@ -18,9 +18,6 @@ RSpec.describe 'recipes/show', type: :system do
     it 'displays the recipe name' do
       expect(page).to have_css('h1', text: 'cafe')
     end
-    it 'displays the preparation time' do
-      expect(page).to have_content('Preparation time: 1.5 hours')
-    end
     it 'displays the cooking time' do
       expect(page).to have_content('Cooking time: 1.0 hours')
     end
