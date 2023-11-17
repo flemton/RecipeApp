@@ -4,8 +4,6 @@
   <h1><b>Recipe App</b></h1><a name="about-project"></a>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
@@ -29,13 +27,13 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Recipe App <a name="about-project"></a>
+# 📖 [RecipeApp] <a name="about-project"></a>
 
-> A Recipe App Project is a web page that allows users to create
-> foods and recipes for themselves and choose if a recipe is public so everyone can see it. Users can generate a shopping list for his own recipes and also, users can register with a username and password and see public recipes from other users as well. Built with RoR.
+The **[Recipe app]** Project is a web page that allows users to create foods and recipes for themselves and choose if a recipe is public so everyone can see it. Users can generate a shopping list for his own recipes and also, users can register with a username and password and see public recipes from other users as well. Built with RoR.
 
 ## 🛠 Built With <a name="built-with"></a>
-
+- Ruby on Rails
+- PostgreSQL
 ### Tech Stack <a name="tech-stack"></a>
 
 > List of technologies used for this project
@@ -92,17 +90,19 @@ gem install ruby
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
-  git clone https://github.com/flemton/RecipeApp.git
+  cd RecipeApp
+  git clone git@github.com:flemton/RecipeApp.git
 ```
+
 ### Install
 
 Install this project with:
 
 ```sh
-  cd Recipe-app
+  cd RecipeApp
   bundle install
 ```
+
 ### Usage
 
 To run the project, execute the following command:
@@ -135,14 +135,13 @@ rspec spec
 ## 👥 Authors <a name="authors"></a>
 
 👨🏼‍🚀 **Alhassan Osman** 🎵
-
 - GitHub: [@flemton](https://github.com/flemton)
-- Linkedin: [@anewtongh](https://linkedin.com/in/newtongh)
 - Twitter: [@oalhassan847](https://twitter.com/oalhassan847)
+- LinkedIn: [newtongh](https://linkedin.com/in/newtongh)
 
 👨🏼‍🚀 **Juan Diego Guerra (JD)** 👾
-
 - GitHub: [@JuanDiegoGuerra](https://github.com/JuanDiegoGuerra)
+- - Twitter: [@jdxelric147](https://twitter.com/jdxelric147)
 - LinkedIn: [Juan Guerra](https://www.linkedin.com/in/juan-guerra-65076b1ba/)
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -154,6 +153,9 @@ rspec spec
 - [ ] **Improve UI**
 - [ ] **Add more functionality**
 - [ ] **Add Inventory List**
+- [ ] **[Add links to shopping ingredients]**
+- [ ] **[Add ability to edit user details]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,8 +173,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project,please give it a ⭐️!
-
+If you like this project kindly consider giving it a star⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -204,6 +205,6 @@ We would like to thank Microverse for giving us the opportunity to learn and gro
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
