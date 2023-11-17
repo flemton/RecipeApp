@@ -1,0 +1,11 @@
+<li class="flex shadow-lg justify-center rounded-sm border-2 border-gray-900 px-4 text-center gap-5 h-40 w-4/5 max-w-4xl">
+  <div class="flex flex-col justify-around my-5 w-1/4">
+    <h2 class="text-xl font-semibold"><%= recipe.name %></h2>
+    <%= button_to "Remove", recipe, method: :delete, class:"text-red-600 underline text-lg" %>
+  </div>
+
+  <div class="flex flex-col my-7 justify-around w-3/4 text-left">
+    <%= truncate(recipe.description, length: 200, omission: '...') %>
+    <%= link_to "Show this recipe", recipe, class:"text-md rounded bg-cyan-600 text-sky-100 border-2 border-sky-800 w-48 text-center mt-2" %>
+  </div>
+</li>

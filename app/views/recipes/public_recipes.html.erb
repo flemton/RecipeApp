@@ -1,0 +1,16 @@
+<h1 class="text-center my-4 text-4xl font-bold">Public Recipes</h1>
+<section class="flex flex-col gap-4 items-center">
+  <% @public_recipes.each do |public_recipe| %>
+      <div class="flex shadow-lg justify-center rounded-sm border-2 border-gray-900 px-4 text-center gap-5 h-40 w-4/5 max-w-4xl">
+        <div class="flex flex-col justify-around my-5 w-1/3">
+          <h3 class="text-xl font-semibold"><a href="<%= recipe_path(public_recipe) %>" class=""><%= public_recipe.name %></a></h3>
+          <h5>by <%= public_recipe.user.name %></h5>
+        </div>
+        <div class="flex flex-col my-7 justify-around w-2/3 text-left">
+          <p>Total food items: <strong><%= public_recipe.recipe_foods.size %></strong></p>
+          <p>Total price: <strong>$<%= total_price(public_recipe.recipe_foods) %></strong></p>
+          <%= link_to "See Recipe >", public_recipe, class:"text-md rounded bg-cyan-600 text-sky-100 border-2  border-sky-800 w-48 text-center mt-2" %>
+        </div>
+      </div>
+  <% end %>
+</section>

@@ -1,0 +1,20 @@
+<div class="w-full flex flex-row-reverse mt-7">
+  <%= link_to "New food", new_food_path, class: "text-green-800 shadow-lg p-2 border-solid border-green-600 bg-green-400 border-2 rounded"%>
+</div>
+<h1 class="text-center my-4 text-4xl font-bold">Foods</h1>
+<section>
+  <table class="w-full text-center border-2 border-green-900 shadow-xl">
+    <thead class="border-2 border-green-900">
+        <tr class="bg-indigo-300">
+          <th class="">Food</th>
+          <th class="border-2 border-green-900">Measurement Unit</th>
+          <th class="">Price</th>
+          <th class="border-2 border-green-900">Quantity</th>
+          <th class="">Actions</th>
+        </tr>
+    </thead>
+    <tbody class="bg-slate-100">
+      <%= render partial: 'shared/table', collection: @foods, as: :item %>
+    </tbody>
+  </table>
+</section>

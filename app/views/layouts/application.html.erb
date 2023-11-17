@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RecipeApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/navbar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="text-green-500 mt-4 ml-4"><%= notice %></p>
+    <p class="text-red-600 mt-4 ml-4"><%= alert %></p>
+    <main class="container mx-auto mt-5 px-4 flex flex-col">
+      <%= yield %>
+    </main>
+  </body>
+</html>

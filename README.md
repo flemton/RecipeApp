@@ -1,96 +1,59 @@
 <a name="readme-top"></a>
 
-<!--
-!!! IMPORTANT !!!
-This README is an example of how you could professionally present your codebase. 
-Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored. 
-
-You should modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
-
-For more information on the importance of a professional README for your repositories: https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/readme_best_practices.md
--->
-
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
+  <h1><b>Recipe App</b></h1><a name="about-project"></a>
 </div>
-
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Recipe App ](#-recipe-app-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ ](#-faq-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [RecipeApp] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+The **[Recipe app]** Project is a web page that allows users to create foods and recipes for themselves and choose if a recipe is public so everyone can see it. Users can generate a shopping list for his own recipes and also, users can register with a username and password and see public recipes from other users as well. Built with RoR.
 
 ## 🛠 Built With <a name="built-with"></a>
-
+- Ruby on Rails
+- PostgreSQL
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> List of technologies used for this project
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org">Ruby on Rails</a></li>
   </ul>
 </details>
 
 <details>
-<summary>Database</summary>
+  <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
@@ -100,29 +63,16 @@ For more information on the importance of a professional README for your reposit
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
+- **Create and Remove Foods for users**
+- **Create and Remove new Recipes**
+- **Set recipes to Public or Private**
+- **See all public recipes from other users**
+- **Generate a shopping List for all recipes of the user based in his food**
+- **Add Foods to recipes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -130,107 +80,82 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-<!--
-Example command:
-
 ```sh
- gem install rails
+gem install ruby
 ```
- -->
+- Browser (Google Chrome, Mozilla Firefox, Safari or any other browser)
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  cd RecipeApp
+  git clone git@github.com:flemton/RecipeApp.git
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
 ```sh
-  cd my-project
-  gem install
+  cd RecipeApp
+  bundle install
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
-```sh
-  rails server
 ```
---->
+rails tailwindcss:watch
+control + c 
+rails s
+```
+**Note:** If there are any errors consider adding your necesary username and password in `database.yml` for setting up your local enviroment and use the following comand:
+
+```
+rails db:create db:migrate
+rails s
+```
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
 ```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
+rails tailwindcss:watch
+control + c
+rspec spec
 ```
- -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👨🏼‍🚀 **Alhassan Osman** 🎵
+- GitHub: [@flemton](https://github.com/flemton)
+- Twitter: [@oalhassan847](https://twitter.com/oalhassan847)
+- LinkedIn: [newtongh](https://linkedin.com/in/newtongh)
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
+👨🏼‍🚀 **Juan Diego Guerra (JD)** 👾
+- GitHub: [@JuanDiegoGuerra](https://github.com/JuanDiegoGuerra)
+- - Twitter: [@jdxelric147](https://twitter.com/jdxelric147)
+- LinkedIn: [Juan Guerra](https://www.linkedin.com/in/juan-guerra-65076b1ba/)
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+- [ ] **Improve UI**
+- [ ] **Add more functionality**
+- [ ] **Add Inventory List**
+- [ ] **[Add links to shopping ingredients]**
+- [ ] **[Add ability to edit user details]**
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -248,9 +173,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project kindly consider giving it a star⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -258,25 +181,23 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+We would like to thank Microverse for giving us the opportunity to learn and grow as developers and also We like to thank our family, they are all our support. 🌟
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **Do I need to install any program before running this project?**
 
-- **[Question_1]**
+  - [ ] **Yes, you need to install Ruby** 
+  
+  <br>
 
-  - [Answer_1]
+- **Can I use this project for my own purposes?**
 
-- **[Question_2]**
-
-  - [Answer_2]
+  - [ ] **Yes, you can.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -284,8 +205,6 @@ I would like to thank...
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
