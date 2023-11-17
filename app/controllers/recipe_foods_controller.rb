@@ -21,7 +21,7 @@ class RecipeFoodsController < ApplicationController
       flash[:notice] = 'Recipe food created successfully added'
       redirect_to recipe_path(params[:recipe_id])
     else
-      flash.now[:error] = 'Failed to create the post.'
+      flash.now[:alert] = 'The arguments are invalid.'
       render :new
     end
   end

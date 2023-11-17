@@ -19,6 +19,7 @@ class FoodsController < ApplicationController
       if @food.save
         format.html { redirect_to foods_url, notice: 'Food was successfully created.' }
       else
+        flash.now[:alert] = 'The arguments are invalid.'
         format.html { render :new, status: :unprocessable_entity }
       end
     end

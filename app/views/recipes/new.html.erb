@@ -1,37 +1,35 @@
-<h1>Create a Recipe</h1>
+<div class="flex flex-col justify-center items-center w-full">
+  <h1 class="text-center text-xl">Create a Recipe</h1>
 
-<%= form_with model: @recipe, url: recipes_path, method: :post do |form| %>
+  <%= form_with model: @recipe, url: recipes_path, method: :post, class: "flex flex-col gap-3 my-3 items-center" do |form| %>
+
+    <div>
+      <%= form.text_field :name, placeholder: "Name", class: "w-full p-2 border-solid border-black border-2 mt-1" %>
+    </div>
+
+    <div>
+      <%= form.text_field :preparation_time, placeholder: "Preparation Time", class: "w-full p-2 border-solid border-black border-2 mt-1" %>
+    </div>
+
+    <div>
+      <%= form.text_field :cooking_time, placeholder: "Cooking Time", class: "w-full p-2 border-solid border-black border-2 mt-1" %>
+    </div>
+
+    <div>
+      <%= form.text_area :description, placeholder: "Recipe Description", class: "w-full p-2 border-solid border-black border-2 mt-1" %>
+    </div>
+
+    <div>
+      <%= form.label :public %>
+      <%= form.check_box :public %>
+    </div>
+
+    <div>
+      <%= form.submit "Create Recipe", class:"p-2 border-solid border-black border-2 w-full mt-5 cursor-pointer" %>
+    </div>
+  <% end %>
 
   <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= link_to "Back to recipe", recipes_path, class: "underline" %>
   </div>
-
-  <div>
-    <%= form.label :preparation_time %>
-    <%= form.text_field :preparation_time %>
-  </div>
-
-  <div>
-    <%= form.label :cooking_time %>
-    <%= form.text_field :cooking_time %>
-  </div>
-
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :public %>
-    <%= form.check_box :public %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<div>
-  <%= link_to "Back to recipe", recipes_path %>
 </div>
