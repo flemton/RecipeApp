@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Foods/new.html', type: :system do
   describe 'New food form' do
-    let!(:user) do
+    let(:user) do
       User.create(name: 'JD', email: 'jdx@gmail.com', password: 'password', password_confirmation: 'password')
     end
 
     before do
+      user.confirm
       sign_in user
       visit new_food_path
     end

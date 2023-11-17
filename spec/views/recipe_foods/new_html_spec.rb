@@ -3,7 +3,7 @@ require 'capybara/rspec'
 
 RSpec.describe 'Add Ingredient form', type: :system do
   describe 'New recipe form' do
-    let!(:user) do
+    let(:user) do
       User.create(name: 'JD', email: 'jdx@gmail.com', password: 'password', password_confirmation: 'password')
     end
 
@@ -17,6 +17,7 @@ RSpec.describe 'Add Ingredient form', type: :system do
     end
 
     before do
+      user.confirm
       sign_in user
       visit new_recipe_recipe_food_path(recipe)
     end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'Public Recipes', type: :system do
   describe 'Public recipes page' do
-    let!(:user) do
+    let(:user) do
       User.create(name: 'JD', email: 'jdx@gmail.com', password: 'password', password_confirmation: 'password')
     end
 
@@ -11,6 +11,7 @@ RSpec.describe 'Public Recipes', type: :system do
     end
 
     before do
+      user.confirm
       sign_in user
       visit public_recipes_path
     end

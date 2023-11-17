@@ -1,7 +1,7 @@
 require './spec/rails_helper'
 RSpec.describe 'recipes/show', type: :system do
   describe 'Show page' do
-    let!(:user) do
+    let(:user) do
       User.create(name: 'JD', email: 'jdx@gmail.com', password: 'password', password_confirmation: 'password')
     end
 
@@ -11,6 +11,7 @@ RSpec.describe 'recipes/show', type: :system do
     end
 
     before do
+      user.confirm
       sign_in user
       visit recipe_path(recipe)
     end

@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'General Shopping List', type: :system do
   describe 'Shopping List page' do
-    let!(:user) do
+    let(:user) do
       User.create(name: 'JD', email: 'jdx@gmail.com', password: 'password', password_confirmation: 'password')
     end
 
     before do
+      user.confirm
       sign_in user
       visit general_shopping_list_index_path
     end
