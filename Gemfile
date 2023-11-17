@@ -75,4 +75,5 @@ group :test do
 end
 
 gem 'devise'
+gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'tailwindcss-rails', '~> 2.0'
